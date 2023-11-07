@@ -1,0 +1,61 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+vector<int> result;
+
+bool isSafe(int row, int col) 
+{
+    for (int prevRow = 0; prevRow < row; prevRow++) 
+	{
+        int prevCol = result[prevRow];
+        if (prevCol == col || abs(prevRow - row) == abs(prevCol - col)) 
+		{
+            return false;
+        }
+    }
+    return true;
+}
+
+void solveNQueens(int n, int row) 
+{
+    if (row == n) 
+	{
+        for (int i = 0; i < n; i++) 
+		{
+            for (int j = 0; j < n; j++) 
+			{
+                if (result[i] == j) 
+				{
+                    cout << "Q ";
+                } 
+				else 
+				{
+                    cout << ". ";
+                }
+            }
+            cout << endl;
+        }
+        cout << endl;
+        return;
+    }
+	
+    for (int col = 0; col < n; col++) 
+	{
+        if (isSafe(row, col)) 
+		{
+            result[row] = col;
+            solveNQueens(n, row + 1);
+        }
+    }
+}
+
+int main() 
+{
+    int n;
+    cout << "Enter the number of queens (N): ";
+    cin >> n;
+    result.resize(n);
+    solveNQueens(n, 0);
+    return 0;
+}

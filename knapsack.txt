@@ -1,0 +1,93 @@
+#include <stdio.h>
+
+void D_knapsack(int n, int m, int p[10], int w[10]) 
+{
+    int v[11][31]; 
+    int xi[10] = {0};
+    
+    for (int i = 0; i <= n; i++) 
+	{
+        for (int j = 0; j <= m; j++) 
+		{
+            if (i == 0 || j == 0) 
+			{
+                v[i][j] = 0;
+            } 
+			else if (w[i - 1] <= j) 
+			{
+                v[i][j] = max(v[i - 1][j], v[i - 1][j - w[i - 1]] + p[i - 1]);
+            } 
+			else 
+			{
+                v[i][j] = v[i - 1][j];
+            }
+        }
+    }
+    
+    printf("\nThe vector table is:\n");
+    for (int i = 0; i <= n; i++) 
+	{
+        for (int j = 0; j <= m; j++) 
+		{
+            printf("%d\t", v[i][j]);
+        }
+        printf("\n");
+    }
+    
+    int i = n;
+    int k = m;
+    
+    while (i > 0 && k > 0) 
+	{
+        if (v[i][k] != v[i - 1][k]) 
+		{
+            xi[i - 1] = 1;
+            k -= w[i - 1];
+        }
+        i--;
+    }
+    
+    printf("\nThe resultant vector is  ");
+    for (int i = 0; i < n; i++) 
+	{
+        printf("%d ", xi[i]);
+    }
+    printf(")\n");
+    
+    printf("\nThe maximum profit of the given objects is: %d\n", v[n][m]);
+}
+
+int main() 
+{
+    int p[10] = {0}; 
+    int w[10] = {0}; 
+    int n, m;
+    
+    printf("Please enter number of elements: ");
+    scanf("%d", &n);
+    
+    if (n > 10) 
+	{
+        printf("Number of elements exceeds array size. Please use a smaller number.\n");
+        return 1;
+    }
+    
+    printf("Please enter capacity: ");
+    scanf("%d", &m);
+    
+    if (m <= 0) 
+	{
+        printf("Capacity should be a positive value.\n");
+        return 1;
+    }
+    
+    printf("Please enter profit and weight of the elements:\n");
+    
+    for (int i = 0; i < n; i++) 
+	{
+        scanf("%d %d", &p[i], &w[i]);
+    }
+    
+    D_knapsack(n, m, p, w);
+    return 0;
+}
