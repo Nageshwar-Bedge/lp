@@ -1,0 +1,135 @@
+Greedy algorithm :-
+
+The greedy method is one of the strategies like Divide and conquer used to solve the problems.used for solving optimization problems
+The Greedy method is the simplest and straightforward approach. It is not an algorithm, but it is a technique. 
+This technique is basically used to determine the feasible solution that may or may not be optimal
+
+Components of Greedy Algorithm :-
+Greedy algorithms have the following five components −
+
+candidate set − A solution is created from this set.
+selection function − Used to choose the best candidate to be added to the solution.
+feasibility function − Used to determine whether a candidate can be used to contribute to the solution.
+objective function − Used to assign a value to a solution or a partial solution.
+solution function − Used to indicate whether a complete solution has been reached.
+
+Applications of Greedy Algorithm :-
+It is used in finding the shortest path.
+It is used to find the minimum spanning tree using the prim's algorithm or the Kruskal's algorithm.
+It is used in a job sequencing with a deadline.
+This algorithm is also used to solve the fractional knapsack problem.
+  
+  
+Examples :-
+
+Travelling Salesman Problem
+Prim's Minimal Spanning Tree Algorithm
+Kruskal's Minimal Spanning Tree Algorithm
+Dijkstra's Minimal Spanning Tree Algorithm
+Knapsack Problem
+
+
+
+=======================================================================================
+
+
+0/1 knapsack problem means that the items are either completely or no items are filled in a knapsack.
+fractional knapsack problem means that we can divide the item
+
+Types of Knapsack Problem :-
+
+1. Fractional Knapsack Problem:- 
+we can break items for maximizing the total value of the knapsack.
+solved using a greedy approach.
+we can take objects in fractions in floating points
+
+2. 0/1 Knapsack Problem :- 
+we are not allowed to break items
+solved using dynamic programming approach
+we can take objects in an integer value
+
+
+
+========================================================================================
+
+Bellman Ford Algorithm :-
+Bellman ford algorithm is a single-source shortest path algorithm. 
+This algorithm is used to find the shortest distance from the single vertex to all the other vertices of a weighted graph.
+
+
+=========================================================================================
+
+
+N-Queens Problem:-
+
+This problem is to find an arrangement of N queens on a chess board, such that no queen can attack any other queens on the board.
+The chess queens can attack in any direction as vertical, horizontal and diagonal way.
+
+Algorithm :-
+Begin
+   if there is a queen at the left of current col, then
+      return false
+   if there is a queen at the left upper diagonal, then
+      return false
+   if there is a queen at the left lower diagonal, then
+      return false;
+   return true //otherwise it is valid place
+End
+
+
+==============================================================
+
+Travelling Salesman Problem (TSP) :-
+the problem is to find the shortest possible route that visits every city exactly once and returns to the starting point
+There are various approaches to find the solution to the travelling salesman problem: greedy approach, dynamic programming approach, etc.
+
+
+================================================================
+
+
++++++++++++++++++++    ML    ++++++++++++++++
+
+
+
+Linear Regression
+Linear regression is a type of supervised machine learning algorithm 
+that computes the linear relationship between a dependent variable and independent variables
+
+which we want to predict
+which are used to predict the values of the dependent variables 
+
+Linear Regression
+Logistic Regression
+Polynomial Regression
+Support Vector Regression
+Decision Tree Regression
+Random Forest Regression
+
+================================================
+
+main goal of the Classification algorithm is to identify the category of a given dataset, 
+and these algorithms are mainly used to predict the output for the categorical data.
+
+Binary Classifier
+Multi-class Classifier
+Decision Tree Classification
+Random Forest Classification
+
+=====================================================
+
+Clustering in machine learning is a type of unsupervised learning technique 
+where the goal is to group similar data points into clusters
+
+K-Means Clustering
+Hierarchical Clustering
+Density-Based Clustering
+Distribution Model-Based Clustering
+
+
+==========================================================
+
+Association rules are a fundamental concept in machine learning and data mining, 
+used to identify interesting relationships in large datasets.
+
+Apriori Algorithm
+F-P Algorithm
